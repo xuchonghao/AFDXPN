@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+<net id="Net-One" type="P/T net">
+<token id="Default" enabled="true" red="0" green="0" blue="0"/>
+<token id="Readers" enabled="true" red="255" green="0" blue="0"/>
+<token id="Writers" enabled="true" red="0" green="0" blue="255"/>
+
+
+
+<place id="Accessingxuchonghoa">
+
+<graphics>
+<position x="435.0" y="285.0"/>
+</graphics>
+
+<name>
+<value>Accessing</value>
+<graphics>
+<offset x="-5" y="25.0"/>
+</graphics>
+</name>
+
+<initialMarking>
+<value>Default,0,Writers,0,Readers,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Resource">
+<graphics>
+<position x="615.0" y="315.0"/>
+</graphics>
+<name>
+<value>Resource</value>
+<graphics>
+<offset x="53.0" y="-9.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,2,Readers,0,Writers,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Waiting for access">
+<graphics>
+<position x="480.0" y="135.0"/>
+</graphics>
+<name>
+<value>Waiting for access</value>
+<graphics>
+<offset x="71.0" y="-8.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0,Writers,2,Readers,5</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<transition id="T3">
+<graphics>
+<position x="450.0" y="225.0"/>
+</graphics>
+<name>
+<value>T3</value>
+<graphics>
+<offset x="-6.0" y="22.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<type>
+<value>0</value>
+</type>
+<delay>
+<value>1.0</value>
+</delay>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="T4">
+<graphics>
+<position x="510.0" y="225.0"/>
+</graphics>
+<name>
+<value>T4</value>
+<graphics>
+<offset x="6.0" y="22.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<type>
+<value>0</value>
+</type>
+<delay>
+<value>1.0</value>
+</delay>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="T5">
+<graphics>
+<position x="450.0" y="420.0"/>
+</graphics>
+<name>
+<value>T5</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<type>
+<value>0</value>
+</type>
+<delay>
+<value>1.0</value>
+</delay>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="T6">
+<graphics>
+<position x="510.0" y="420.0"/>
+</graphics>
+<name>
+<value>T6</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<type>
+<value>0</value>
+</type>
+<delay>
+<value>1.0</value>
+</delay>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<arc id="Reading/Writing to T5" source="Accessingxuchonghoa" target="T5">
+<graphics/>
+<inscription>
+<value>Default,0,Readers,1,Writers,0</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="448" y="311" curvePoint="false"/>
+<arcpath id="001" x="462" y="417" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Reading/Writing to T6" source="Accessingxuchonghoa" target="T6">
+<graphics/>
+<inscription>
+<value>Default,0,Readers,0,Writers,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="455" y="309" curvePoint="false"/>
+<arcpath id="001" x="522" y="417" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Resource to T3" source="Resource" target="T3">
+<graphics/>
+<inscription>
+<value>Default,1,Readers,0,Writers,0</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="613" y="319" curvePoint="false"/>
+<arcpath id="001" x="466" y="237" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Resource to T4" source="Resource" target="T4">
+<graphics/>
+<inscription>
+<value>Default,3,Readers,0,Writers,0</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="615" y="316" curvePoint="false"/>
+<arcpath id="001" x="526" y="237" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="T3 to Reading/Writing" source="T3" target="Accessingxuchonghoa">
+<graphics/>
+<inscription>
+<value>Default,0,Readers,1,Writers,0</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="462" y="252" curvePoint="false"/>
+<arcpath id="001" x="451" y="282" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="T4 to Reading/Writing" source="T4" target="Accessingxuchonghoa">
+<graphics/>
+<inscription>
+<value>Default,0,Readers,0,Writers,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="516" y="237" curvePoint="false"/>
+<arcpath id="001" x="458" y="287" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="T5 to Resource" source="T5" target="Resource">
+<graphics/>
+<inscription>
+<value>Default,1,Readers,0,Writers,0</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="466" y="432" curvePoint="false"/>
+<arcpath id="001" x="614" y="335" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="T5 to Waiting to Read/Write" source="T5" target="Waiting for access">
+<graphics/>
+<inscription>
+<value>Default,0,Readers,1,Writers,0</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="456" y="432" curvePoint="false"/>
+<arcpath id="001" x="331" y="436" curvePoint="false"/>
+<arcpath id="002" x="331" y="151" curvePoint="false"/>
+<arcpath id="003" x="477" y="147" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="T6 to Resource" source="T6" target="Resource">
+<graphics/>
+<inscription>
+<value>Default,3,Readers,0,Writers,0</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="527" y="427" curvePoint="false"/>
+<arcpath id="001" x="616" y="337" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="T6 to Waiting to Read/Write" source="T6" target="Waiting for access">
+<graphics/>
+<inscription>
+<value>Readers,0,Default,0,Writers,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="526" y="437" curvePoint="false"/>
+<arcpath id="001" x="705" y="435" curvePoint="false"/>
+<arcpath id="002" x="705" y="150" curvePoint="false"/>
+<arcpath id="003" x="506" y="147" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Waiting to Read/Write to T3" source="Waiting for access" target="T3">
+<graphics/>
+<inscription>
+<value>Default,0,Readers,1,Writers,0</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="486" y="160" curvePoint="false"/>
+<arcpath id="001" x="462" y="222" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Waiting to Read/Write to T4" source="Waiting for access" target="T4">
+<graphics/>
+<inscription>
+<value>Default,0,Readers,0,Writers,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="497" y="160" curvePoint="false"/>
+<arcpath id="001" x="522" y="222" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+</net>
+</pnml>

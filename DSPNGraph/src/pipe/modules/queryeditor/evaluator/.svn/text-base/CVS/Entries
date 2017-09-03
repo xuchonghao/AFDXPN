@@ -1,0 +1,13 @@
+/AnalysisResultsReceiver.java.svn-base/1.1/Wed Sep  7 01:44:08 2011/-kb/
+/AnalysisStatusUpdater.java.svn-base/1.1/Mon Sep  5 00:33:38 2011/-kb/
+/AnalysisThread.java.svn-base/1.1/Wed Sep 14 00:46:14 2011/-kb/
+/CommunicatorStarter.java.svn-base/1.1/Mon Sep  5 00:33:38 2011/-kb/
+/EditQueryTreeNodeAction.java.svn-base/1.1/Tue Sep  6 22:56:40 2011/-kb/
+/EvaluatorLoggingHandler.java.svn-base/1.1/Mon Sep  5 00:33:38 2011/-kb/
+/InterruptableSocketIO.java.svn-base/1.1/Mon Sep  5 00:33:38 2011/-kb/
+/LoggingListener.java.svn-base/1.1/Tue Sep  6 22:23:54 2011/-kb/
+/NodeStatusUpdater.java.svn-base/1.1/Mon Sep  5 00:33:38 2011/-kb/
+/PerformanceTreeNodeWrapper.java.svn-base/1.1/Wed Sep 14 00:46:10 2011/-kb/
+/QueryAnalysisException.java.svn-base/1.1/Mon Sep  5 00:33:38 2011/-kb/
+/QueryEvaluator.java.svn-base/1.1/Tue Sep  6 22:56:46 2011/-kb/
+/SettingsManager.java.svn-base/1.1/Tue Sep  6 22:56:46 2011/-kb/
